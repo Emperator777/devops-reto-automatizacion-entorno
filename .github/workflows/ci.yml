@@ -45,9 +45,8 @@ jobs:
         run: echo "${GHCR_TOKEN}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
       - name: Build Docker image
-        run: docker build \
-          --tag ghcr.io/${{ github.repository_owner }}/devops-reto-entorno:latest \
-          --file Dockerfile .
+        run: docker build -t ghcr.io/${{ github.repository_owner }}/devops-reto-entorno:latest -f Dockerfile .
+
 
       - name: Push to GHCR
         run: docker push ghcr.io/${{ github.repository_owner }}/devops-reto-entorno:latest
