@@ -53,11 +53,14 @@ jobs:
         run: docker build -t ${{ steps.set-tag.outputs.image-tag }} .
 
   push:
-    name: Push Docker Image to GHCR
+    name: Push to GHCR
     needs: [lint, build]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
+      - name: Re-build Docker image
+        run: docker build -t ${{ needs.build.outputs.image-tag }} .
 
       - name: Log in to GHCR
         env:
