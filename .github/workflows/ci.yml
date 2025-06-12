@@ -1,0 +1,53 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lint:
+    name: Lint Code
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: |
+          cd app
+          npm ci
+
+      - name: Run ESLint
+        run: |
+          cd app
+          npx eslint .
+
+  build-and-push:
+    name: Build & Push Docker Image to GHCR
+    needs: lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Log in to GHCR
+        env:
+          GHCR_TOKEN: ${{ secrets.GHCR_TOKEN }}
+        run: echo "${GHCR_TOKEN}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+      - name: Build Docker image
+        run: docker build \
+          --tag ghcr.io/${{ github.repository_owner }}/devops-reto-entorno:latest \
+          --file Dockerfile .
+
+      - name: Push to GHCR
+        run: docker push ghcr.io/${{ github.repository_owner }}/devops-reto-entorno:latest
