@@ -31,9 +31,32 @@ jobs:
           cd app
           npx eslint .
 
-  build-and-push:
-    name: Build & Push Docker Image to GHCR
+  build:
+    name: Build Docker Image
     needs: lint
+    runs-on: ubuntu-latest
+    outputs:
+      image-tag: ${{ steps.build-image.outputs.image-tag }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Determine image tag
+        id: build-image
+        run: |
+          OWNER=${{ github.repository_owner }}
+          # Lowercase the owner
+          OWNER_LOWER=${OWNER,,}
+          IMAGE_TAG="ghcr.io/${OWNER_LOWER}/devops-reto-entorno:latest"
+          echo "IMAGE_TAG=$IMAGE_TAG" >> $GITHUB_OUTPUT
+
+      - name: Build Docker image
+        run: |
+          docker build -t ${{ needs.build.outputs.image-tag }} .
+
+  push:
+    name: Push Docker Image to GHCR
+    needs: [lint, build]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -42,18 +65,9 @@ jobs:
       - name: Log in to GHCR
         env:
           GHCR_TOKEN: ${{ secrets.GHCR_TOKEN }}
-        run: echo "${GHCR_TOKEN}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
-
-      - name: Build Docker image
         run: |
-          OWNER=${{ github.repository_owner }}
-          IMAGE_TAG=ghcr.io/${OWNER,,}/devops-reto-entorno:latest
-          docker build -t $IMAGE_TAG .
+          echo "${GHCR_TOKEN}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
-
-      - name: Push to GHCR
+      - name: Push image
         run: |
-          OWNER=${{ github.repository_owner }}
-          IMAGE_TAG=ghcr.io/${OWNER,,}/devops-reto-entorno:latest
-          echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
-          docker push $IMAGE_TAG
+          docker push ${{ needs.build.outputs.image-tag }}
