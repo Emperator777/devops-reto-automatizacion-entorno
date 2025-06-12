@@ -13,6 +13,11 @@ yarn-error.log*
 # Sistema operativo
 .DS_Store
 
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+
 # Otros 
 dist/
 build/

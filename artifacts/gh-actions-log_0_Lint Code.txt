@@ -1,0 +1,178 @@
+﻿2025-06-12T03:50:27.5116875Z Current runner version: '2.325.0'
+2025-06-12T03:50:27.5150247Z ##[group]Runner Image Provisioner
+2025-06-12T03:50:27.5151852Z Hosted Compute Agent
+2025-06-12T03:50:27.5152884Z Version: 20250529.345
+2025-06-12T03:50:27.5153892Z Commit: 22237e57af968c281070ffa8ed912c1b754f9a23
+2025-06-12T03:50:27.5155064Z Build Date: 2025-05-29T20:18:30Z
+2025-06-12T03:50:27.5156083Z ##[endgroup]
+2025-06-12T03:50:27.5157051Z ##[group]Operating System
+2025-06-12T03:50:27.5158077Z Ubuntu
+2025-06-12T03:50:27.5158974Z 24.04.2
+2025-06-12T03:50:27.5159730Z LTS
+2025-06-12T03:50:27.5160606Z ##[endgroup]
+2025-06-12T03:50:27.5161705Z ##[group]Runner Image
+2025-06-12T03:50:27.5162680Z Image: ubuntu-24.04
+2025-06-12T03:50:27.5163707Z Version: 20250602.3.0
+2025-06-12T03:50:27.5165513Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250602.3/images/ubuntu/Ubuntu2404-Readme.md
+2025-06-12T03:50:27.5168254Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250602.3
+2025-06-12T03:50:27.5170171Z ##[endgroup]
+2025-06-12T03:50:27.5172206Z ##[group]GITHUB_TOKEN Permissions
+2025-06-12T03:50:27.5175266Z Contents: read
+2025-06-12T03:50:27.5176151Z Metadata: read
+2025-06-12T03:50:27.5177085Z Packages: read
+2025-06-12T03:50:27.5178056Z ##[endgroup]
+2025-06-12T03:50:27.5180915Z Secret source: Actions
+2025-06-12T03:50:27.5182724Z Prepare workflow directory
+2025-06-12T03:50:27.5557499Z Prepare all required actions
+2025-06-12T03:50:27.5618374Z Getting action download info
+2025-06-12T03:50:27.8692736Z ##[group]Download immutable action package 'actions/checkout@v3'
+2025-06-12T03:50:27.8693744Z Version: 3.6.0
+2025-06-12T03:50:27.8694759Z Digest: sha256:942562b9c7d4b1f2557f1da21f4d3eb4eb4fd01f2ad78b2a6e187d1b193e0a0f
+2025-06-12T03:50:27.8695938Z Source commit SHA: f43a0e5ff2bd294095638e18286ca9a3d1956744
+2025-06-12T03:50:27.8696675Z ##[endgroup]
+2025-06-12T03:50:27.9587575Z ##[group]Download immutable action package 'actions/setup-node@v3'
+2025-06-12T03:50:27.9588448Z Version: 3.9.1
+2025-06-12T03:50:27.9589188Z Digest: sha256:d8c8dbd6e63927801f9de42620f961a361b03be6034dcc11e83ca01f50cb9f40
+2025-06-12T03:50:27.9590114Z Source commit SHA: 3235b876344d2a9aa001b8d1453c930bba69e610
+2025-06-12T03:50:27.9590852Z ##[endgroup]
+2025-06-12T03:50:28.4197872Z Complete job name: Lint Code
+2025-06-12T03:50:28.4892333Z ##[group]Run actions/checkout@v3
+2025-06-12T03:50:28.4893253Z with:
+2025-06-12T03:50:28.4893864Z   repository: Emperator777/devops-reto-automatizacion-entorno
+2025-06-12T03:50:28.4894813Z   token: ***
+2025-06-12T03:50:28.4895246Z   ssh-strict: true
+2025-06-12T03:50:28.4895765Z   persist-credentials: true
+2025-06-12T03:50:28.4896274Z   clean: true
+2025-06-12T03:50:28.4896668Z   sparse-checkout-cone-mode: true
+2025-06-12T03:50:28.4897149Z   fetch-depth: 1
+2025-06-12T03:50:28.4897529Z   fetch-tags: false
+2025-06-12T03:50:28.4897916Z   lfs: false
+2025-06-12T03:50:28.4898391Z   submodules: false
+2025-06-12T03:50:28.4898799Z   set-safe-directory: true
+2025-06-12T03:50:28.4899465Z ##[endgroup]
+2025-06-12T03:50:28.5775666Z Syncing repository: Emperator777/devops-reto-automatizacion-entorno
+2025-06-12T03:50:28.5777694Z ##[group]Getting Git version info
+2025-06-12T03:50:28.5778919Z Working directory is '/home/runner/work/devops-reto-automatizacion-entorno/devops-reto-automatizacion-entorno'
+2025-06-12T03:50:28.5780260Z [command]/usr/bin/git version
+2025-06-12T03:50:28.5792005Z git version 2.49.0
+2025-06-12T03:50:28.5818372Z ##[endgroup]
+2025-06-12T03:50:28.5832751Z Temporarily overriding HOME='/home/runner/work/_temp/e0291bce-c285-4349-8d34-6b745bd5bbab' before making global git config changes
+2025-06-12T03:50:28.5834915Z Adding repository directory to the temporary git global config as a safe directory
+2025-06-12T03:50:28.5837269Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/devops-reto-automatizacion-entorno/devops-reto-automatizacion-entorno
+2025-06-12T03:50:28.5869700Z Deleting the contents of '/home/runner/work/devops-reto-automatizacion-entorno/devops-reto-automatizacion-entorno'
+2025-06-12T03:50:28.5873028Z ##[group]Initializing the repository
+2025-06-12T03:50:28.5876087Z [command]/usr/bin/git init /home/runner/work/devops-reto-automatizacion-entorno/devops-reto-automatizacion-entorno
+2025-06-12T03:50:28.5963302Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-06-12T03:50:28.5964572Z hint: is subject to change. To configure the initial branch name to use in all
+2025-06-12T03:50:28.5965469Z hint: of your new repositories, which will suppress this warning, call:
+2025-06-12T03:50:28.5966119Z hint:
+2025-06-12T03:50:28.5966582Z hint: 	git config --global init.defaultBranch <name>
+2025-06-12T03:50:28.5967343Z hint:
+2025-06-12T03:50:28.5968237Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-06-12T03:50:28.5969708Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-06-12T03:50:28.5970773Z hint:
+2025-06-12T03:50:28.5971190Z hint: 	git branch -m <name>
+2025-06-12T03:50:28.5972350Z Initialized empty Git repository in /home/runner/work/devops-reto-automatizacion-entorno/devops-reto-automatizacion-entorno/.git/
+2025-06-12T03:50:28.5976716Z [command]/usr/bin/git remote add origin https://github.com/Emperator777/devops-reto-automatizacion-entorno
+2025-06-12T03:50:28.6007345Z ##[endgroup]
+2025-06-12T03:50:28.6008083Z ##[group]Disabling automatic garbage collection
+2025-06-12T03:50:28.6009930Z [command]/usr/bin/git config --local gc.auto 0
+2025-06-12T03:50:28.6038550Z ##[endgroup]
+2025-06-12T03:50:28.6043981Z ##[group]Setting up auth
+2025-06-12T03:50:28.6044685Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-06-12T03:50:28.6069212Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-06-12T03:50:28.6340006Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-06-12T03:50:28.6365765Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-06-12T03:50:28.6580562Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-06-12T03:50:28.6612044Z ##[endgroup]
+2025-06-12T03:50:28.6612902Z ##[group]Fetching the repository
+2025-06-12T03:50:28.6619816Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +4079cdc8e370e7deb83b7860cfa538af9a3a092a:refs/remotes/origin/main
+2025-06-12T03:50:29.0118635Z remote: Enumerating objects: 16, done.        
+2025-06-12T03:50:29.0119868Z remote: Counting objects:   6% (1/16)        
+2025-06-12T03:50:29.0120991Z remote: Counting objects:  12% (2/16)        
+2025-06-12T03:50:29.0193779Z remote: Counting objects:  18% (3/16)        
+2025-06-12T03:50:29.0194947Z remote: Counting objects:  25% (4/16)        
+2025-06-12T03:50:29.0196206Z remote: Counting objects:  31% (5/16)        
+2025-06-12T03:50:29.0197268Z remote: Counting objects:  37% (6/16)        
+2025-06-12T03:50:29.0198396Z remote: Counting objects:  43% (7/16)        
+2025-06-12T03:50:29.0199475Z remote: Counting objects:  50% (8/16)        
+2025-06-12T03:50:29.0200534Z remote: Counting objects:  56% (9/16)        
+2025-06-12T03:50:29.0201987Z remote: Counting objects:  62% (10/16)        
+2025-06-12T03:50:29.0203204Z remote: Counting objects:  68% (11/16)        
+2025-06-12T03:50:29.0204369Z remote: Counting objects:  75% (12/16)        
+2025-06-12T03:50:29.0205545Z remote: Counting objects:  81% (13/16)        
+2025-06-12T03:50:29.0206857Z remote: Counting objects:  87% (14/16)        
+2025-06-12T03:50:29.0208093Z remote: Counting objects:  93% (15/16)        
+2025-06-12T03:50:29.0209148Z remote: Counting objects: 100% (16/16)        
+2025-06-12T03:50:29.0210341Z remote: Counting objects: 100% (16/16), done.        
+2025-06-12T03:50:29.0212120Z remote: Compressing objects:   7% (1/13)        
+2025-06-12T03:50:29.0213294Z remote: Compressing objects:  15% (2/13)        
+2025-06-12T03:50:29.0214427Z remote: Compressing objects:  23% (3/13)        
+2025-06-12T03:50:29.0215666Z remote: Compressing objects:  30% (4/13)        
+2025-06-12T03:50:29.0216911Z remote: Compressing objects:  38% (5/13)        
+2025-06-12T03:50:29.0218046Z remote: Compressing objects:  46% (6/13)        
+2025-06-12T03:50:29.0219218Z remote: Compressing objects:  53% (7/13)        
+2025-06-12T03:50:29.0220288Z remote: Compressing objects:  61% (8/13)        
+2025-06-12T03:50:29.0221349Z remote: Compressing objects:  69% (9/13)        
+2025-06-12T03:50:29.0222641Z remote: Compressing objects:  76% (10/13)        
+2025-06-12T03:50:29.0223790Z remote: Compressing objects:  84% (11/13)        
+2025-06-12T03:50:29.0224977Z remote: Compressing objects:  92% (12/13)        
+2025-06-12T03:50:29.0226294Z remote: Compressing objects: 100% (13/13)        
+2025-06-12T03:50:29.0227708Z remote: Compressing objects: 100% (13/13), done.        
+2025-06-12T03:50:29.0368080Z remote: Total 16 (delta 0), reused 13 (delta 0), pack-reused 0 (from 0)        
+2025-06-12T03:50:29.0434987Z From https://github.com/Emperator777/devops-reto-automatizacion-entorno
+2025-06-12T03:50:29.0437124Z  * [new ref]         4079cdc8e370e7deb83b7860cfa538af9a3a092a -> origin/main
+2025-06-12T03:50:29.0463033Z ##[endgroup]
+2025-06-12T03:50:29.0464026Z ##[group]Determining the checkout info
+2025-06-12T03:50:29.0465450Z ##[endgroup]
+2025-06-12T03:50:29.0466342Z ##[group]Checking out the ref
+2025-06-12T03:50:29.0469104Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2025-06-12T03:50:29.0519174Z Switched to a new branch 'main'
+2025-06-12T03:50:29.0522209Z branch 'main' set up to track 'origin/main'.
+2025-06-12T03:50:29.0529280Z ##[endgroup]
+2025-06-12T03:50:29.0560163Z [command]/usr/bin/git log -1 --format='%H'
+2025-06-12T03:50:29.0581126Z '4079cdc8e370e7deb83b7860cfa538af9a3a092a'
+2025-06-12T03:50:29.0865704Z ##[group]Run actions/setup-node@v3
+2025-06-12T03:50:29.0866729Z with:
+2025-06-12T03:50:29.0867414Z   node-version: 18
+2025-06-12T03:50:29.0868176Z   always-auth: false
+2025-06-12T03:50:29.0868982Z   check-latest: false
+2025-06-12T03:50:29.0870030Z   token: ***
+2025-06-12T03:50:29.0870744Z ##[endgroup]
+2025-06-12T03:50:29.2769000Z Found in cache @ /opt/hostedtoolcache/node/18.20.8/x64
+2025-06-12T03:50:29.2775262Z ##[group]Environment details
+2025-06-12T03:50:30.7343348Z node: v18.20.8
+2025-06-12T03:50:30.7344039Z npm: 10.8.2
+2025-06-12T03:50:30.7344413Z yarn: 1.22.22
+2025-06-12T03:50:30.7345780Z ##[endgroup]
+2025-06-12T03:50:30.7457441Z ##[group]Run cd app
+2025-06-12T03:50:30.7457782Z [36;1mcd app[0m
+2025-06-12T03:50:30.7458014Z [36;1mnpm ci[0m
+2025-06-12T03:50:30.7565028Z shell: /usr/bin/bash -e {0}
+2025-06-12T03:50:30.7565332Z ##[endgroup]
+2025-06-12T03:50:33.8174756Z 
+2025-06-12T03:50:33.8184304Z added 154 packages, and audited 155 packages in 3s
+2025-06-12T03:50:33.8184944Z 
+2025-06-12T03:50:33.8185295Z 39 packages are looking for funding
+2025-06-12T03:50:33.8185813Z   run `npm fund` for details
+2025-06-12T03:50:33.8189298Z 
+2025-06-12T03:50:33.8189734Z found 0 vulnerabilities
+2025-06-12T03:50:33.8358963Z ##[group]Run cd app
+2025-06-12T03:50:33.8359221Z [36;1mcd app[0m
+2025-06-12T03:50:33.8359423Z [36;1mnpx eslint .[0m
+2025-06-12T03:50:33.8411259Z shell: /usr/bin/bash -e {0}
+2025-06-12T03:50:33.8411493Z ##[endgroup]
+2025-06-12T03:50:34.4956362Z Post job cleanup.
+2025-06-12T03:50:34.6622821Z Post job cleanup.
+2025-06-12T03:50:34.7339491Z [command]/usr/bin/git version
+2025-06-12T03:50:34.7373456Z git version 2.49.0
+2025-06-12T03:50:34.7418031Z Temporarily overriding HOME='/home/runner/work/_temp/4e9cc54c-9b00-41d1-bb4e-0a935f374550' before making global git config changes
+2025-06-12T03:50:34.7419532Z Adding repository directory to the temporary git global config as a safe directory
+2025-06-12T03:50:34.7423161Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/devops-reto-automatizacion-entorno/devops-reto-automatizacion-entorno
+2025-06-12T03:50:34.7453527Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-06-12T03:50:34.7482620Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-06-12T03:50:34.7708003Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-06-12T03:50:34.7727408Z http.https://github.com/.extraheader
+2025-06-12T03:50:34.7738706Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-06-12T03:50:34.7766065Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-06-12T03:50:34.8079589Z Cleaning up orphan processes
